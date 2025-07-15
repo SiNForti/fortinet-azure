@@ -1,0 +1,402 @@
+{
+  "assessedFromCodesecBot": false,
+  "assessmentDirectory": ".",
+  "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+  "completedAt": "2025-07-14T15:03:11.339Z",
+  "detectedIacLanguages": [
+    "terraform"
+  ],
+  "evalGuid": "",
+  "findings": [
+    {
+      "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+      "autofix": false,
+      "checkType": "terraform",
+      "compliance": [],
+      "description": "-",
+      "evalGuid": "",
+      "fileName": "02-fortigate.tf",
+      "filePath": "02-fortigate.tf",
+      "findingGuid": "f-906796b10687857187e790bee0bbdda2a45e0fa56063e07740c71e3d3d7293ea",
+      "gitFilePermaLink": "",
+      "isModuleReference": false,
+      "isSuppressed": false,
+      "line": 46,
+      "lineRangeEnd": 46,
+      "longId": "azure-network-ssh-blocked-from-internet",
+      "markdown": "Security group rule allows ingress to SSH port from multiple public internet addresses.\n\n#### Resource\nazurerm_network_security_rule.fgtnsgallowallin\n\n#### File\n02-fortigate.tf : Line 46\n\n",
+      "partialFingerprint": "af5a3668b7b35008:1",
+      "pass": false,
+      "policyId": "tfsec-azu017",
+      "repoPath": "",
+      "resource": "azurerm_network_security_rule.fgtnsgallowallin",
+      "ruleId": "AVD-AZU-0050",
+      "severity": "Critical",
+      "title": "SSH access should not be accessible from the Internet, should be blocked on port 22"
+    },
+    {
+      "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+      "autofix": false,
+      "checkType": "terraform",
+      "compliance": [],
+      "description": "-",
+      "evalGuid": "",
+      "fileName": "02-fortigate.tf",
+      "filePath": "02-fortigate.tf",
+      "findingGuid": "f-8f45a5788aba53b14c2575ab2a07e3a3c67027c86bd922eb6743c6f1e3438cad",
+      "gitFilePermaLink": "",
+      "isModuleReference": false,
+      "isSuppressed": false,
+      "line": 33,
+      "lineRangeEnd": 33,
+      "longId": "azure-network-no-public-egress",
+      "markdown": "Security group rule allows egress to public internet.\n\n#### Resource\nazurerm_network_security_rule.fgtnsgallowallout\n\n#### File\n02-fortigate.tf : Line 33\n\n",
+      "partialFingerprint": "624431ad6c5a2d09:1",
+      "pass": false,
+      "policyId": "tfsec-azu002",
+      "repoPath": "",
+      "resource": "azurerm_network_security_rule.fgtnsgallowallout",
+      "ruleId": "AVD-AZU-0051",
+      "severity": "Critical",
+      "title": "An outbound network security rule allows traffic to `/0`"
+    },
+    {
+      "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+      "autofix": false,
+      "checkType": "terraform",
+      "compliance": null,
+      "description": "Network security rules should not use very broad subnets. Where possible, segements should be broken into smaller subnets.",
+      "evalGuid": "",
+      "fileName": "02-fortigate.tf",
+      "filePath": "02-fortigate.tf",
+      "findingGuid": "f-be966b4d43164a7372a9625b02d85248ee91a2f0f8a87071cb0fcaf34d037cbe",
+      "gitFilePermaLink": "",
+      "isModuleReference": false,
+      "isSuppressed": false,
+      "line": 36,
+      "lineRangeEnd": 36,
+      "markdown": "Network security rules should not use very broad subnets. Where possible, segements should be broken into smaller subnets.\n\n#### Resource\nazurerm_network_security_rule.fgtnsgallowallin\n\n#### File\n02-fortigate.tf : Line 36\n\n",
+      "partialFingerprint": "f6ae1d578a378c38:1",
+      "pass": false,
+      "policyId": "lacework-iac-azure-network-1",
+      "repoPath": "",
+      "resource": "azurerm_network_security_rule.fgtnsgallowallin",
+      "ruleId": "",
+      "severity": "Critical",
+      "title": "An inbound network security rule allows traffic from `/0`"
+    },
+    {
+      "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+      "autofix": false,
+      "checkType": "terraform",
+      "compliance": null,
+      "description": "Network security rules should not use very broad subnets. Where possible, segements should be broken into smaller subnets.",
+      "evalGuid": "",
+      "fileName": "02-fortigate.tf",
+      "filePath": "02-fortigate.tf",
+      "findingGuid": "f-b8f02922b1dfa21119415e552f8fd36f37628738ecca22d8f274c985404a150d",
+      "gitFilePermaLink": "",
+      "isModuleReference": false,
+      "isSuppressed": false,
+      "line": 22,
+      "lineRangeEnd": 22,
+      "markdown": "Network security rules should not use very broad subnets. Where possible, segements should be broken into smaller subnets.\n\n#### Resource\nazurerm_network_security_rule.fgtnsgallowallout\n\n#### File\n02-fortigate.tf : Line 22\n\n",
+      "partialFingerprint": "c0a9a3a0ffb071f8:1",
+      "pass": true,
+      "policyId": "lacework-iac-azure-network-1",
+      "repoPath": "",
+      "resource": "azurerm_network_security_rule.fgtnsgallowallout",
+      "ruleId": "",
+      "severity": "Critical",
+      "title": "An inbound network security rule allows traffic from `/0`"
+    },
+    {
+      "assessmentGuid": "514b82dc-6fad-46fb-877d-7f61faaade64",
+      "autofix": false,
+      "checkType": "terraform",
+      "compliance": [
+        "CIS"
+      ],
+      "description": "-",
+      "evalGuid": "",
+      "fileName": "02-fortigate.tf",
+      "filePath": "02-fortigate.tf",
+      "findingGuid": "f-1ed7d4a84928ea1a94bbb8f48340c46d6a3fb4229fdac0b44ebea569e141d3d3",
+      "gitFilePermaLink": "",
+      "isModuleReference": false,
+      "isSuppressed": false,
+      "line": 307,
+      "lineRangeEnd": 315,
+      "longId": "azure-compute-enable-disk-encryption",
+      "markdown": "\n\n#### Resource\nazurerm_managed_disk.fgtvm-datadisk[0]\n\n#### File\n02-fortigate.tf : Lines 307 - 315\n\n",
+      "partialFingerprint": "432a867eb06bf311:1",
+      "pass": true,
+      "policyId": "tfsec-azu003",
+      "repoPath": "",
+      "resource": "azurerm_managed_disk.fgtvm-datadisk[0]",
+      "ruleId": "AVD-AZU-0038",
+      "severity": "Medium",
+      "title": "Unencrypted managed disk"
+    }
+  ],
+  "inventory": {
+    "cdk_directories": [],
+    "ci_systems": [],
+    "cloudformation_files": [],
+    "docker_directories": [],
+    "dockerfiles": [],
+    "go_directories": [],
+    "helm_charts": [],
+    "java_directories": [],
+    "kubernetes_manifest_directories": [],
+    "kustomize_directories": [],
+    "node_directories": [],
+    "python_directories": [],
+    "ruby_directories": [],
+    "terraform_modules": [
+      "."
+    ],
+    "terraform_plan_files": [],
+    "terraform_root_modules": [
+      "."
+    ]
+  },
+  "metadata": {
+    "assessmentDirectory": ".",
+    "assessmentSucceeded": false,
+    "ciEnvironment": {
+      "CODESEC_CI_SYSTEM": "",
+      "CODESEC_HOSTNAME": "EU-292Y694"
+    },
+    "configs": {},
+    "profile": "default",
+    "scanInfo": {
+      "command": "/root/.config/lacework/components/iac/iac scan -d ENBD-TF_v2 --save-result lacework-cnapp_IACSCAN_output.json",
+      "completedAt": "2025-07-14T15:03:11.339Z",
+      "duration": "13.133230216s",
+      "failedScans": 3,
+      "iacVersion": "v0.10.27",
+      "laceworkCLIVersion": "2.3.2",
+      "passedScans": 0,
+      "scans": [
+        {
+          "command": "",
+          "commandStatus": {
+            "exitCode": -1
+          },
+          "completedAt": "2025-07-14T15:02:58.209Z",
+          "duration": "308.624µs",
+          "error": "unknown error checking docker availability",
+          "findings": 0,
+          "scanType": "terraform",
+          "scanner": "checkov",
+          "startedAt": "2025-07-14T15:02:58.209Z"
+        },
+        {
+          "command": "/tmp/tmp1675181959/tmp_opal/opal run --format json --include /tmp/policy24215063 --input-type tf .",
+          "commandStatus": {
+            "exitCode": 1
+          },
+          "completedAt": "2025-07-14T15:02:58.821Z",
+          "duration": "612.686124ms",
+          "findings": 2,
+          "scanType": "terraform",
+          "scanner": "opal",
+          "startedAt": "2025-07-14T15:02:58.209Z"
+        },
+        {
+          "command": "/root/.config/lacework/iac/downloads/aquasecurity-tfsec/v1.27.6/aquasecurity-tfsec --no-color -f json --include-ignored --include-passed .",
+          "commandStatus": {
+            "exitCode": 1
+          },
+          "completedAt": "2025-07-14T15:03:11.339Z",
+          "duration": "13.129390131s",
+          "findings": 4,
+          "scanType": "terraform",
+          "scanner": "tfsec",
+          "startedAt": "2025-07-14T15:02:58.21Z"
+        }
+      ],
+      "skippedScans": 0,
+      "startedAt": "2025-07-14T15:02:58.206Z",
+      "totalScans": 3
+    },
+    "scanProfiles": {
+      "local": {
+        "default": {
+          "iac": {
+            "enabled": null,
+            "pullRequest": {},
+            "scan": {}
+          },
+          "sca": {
+            "enabled": null,
+            "pullRequest": {},
+            "scan": {}
+          }
+        }
+      },
+      "merged": {
+        "default": {
+          "iac": {
+            "enabled": true,
+            "pullRequest": {
+              "auditMode": false,
+              "commentOnlyHighAndCritical": false,
+              "comments": true
+            },
+            "scan": {
+              "autofix": false,
+              "awsCdk": false,
+              "checkov": true,
+              "checkovModuleDownload": false,
+              "cloudformation": true,
+              "dockerfile": true,
+              "helm": true,
+              "kubernetes": true,
+              "kustomize": true,
+              "opal": true,
+              "scanGitSubModules": false,
+              "terraform": true,
+              "terraformPlan": true,
+              "tfsec": true
+            }
+          },
+          "sca": {
+            "enabled": true,
+            "pullRequest": {
+              "auditMode": false,
+              "commentOnlyHighAndCritical": false,
+              "comments": true
+            },
+            "scan": {
+              "acf": false,
+              "acfLocations": 5,
+              "acfLocationsFull": [],
+              "activeOnly": false,
+              "dynamic": false,
+              "dynamicDev": false,
+              "evalDirectOnly": false,
+              "exceptions": [],
+              "exclude": [],
+              "fixSuggestions": false,
+              "fullBazel": false,
+              "generateLockFiles": false,
+              "inactiveOnly": false,
+              "includeDev": false,
+              "javaIndirect": false,
+              "javaLocalCache": false,
+              "licenseCategoriesNotAllowed": [
+                "forbidden",
+                "restricted"
+              ],
+              "licenseDetection": true,
+              "linesOfCode": true,
+              "pullDeps": true,
+              "recurseSubmodules": false,
+              "sast": true,
+              "scr": true,
+              "secret": true,
+              "vulnEvaluation": true
+            }
+          }
+        }
+      },
+      "remote": {
+        "default": {
+          "iac": {
+            "enabled": true,
+            "pullRequest": {
+              "auditMode": false,
+              "commentOnlyHighAndCritical": false,
+              "comments": true
+            },
+            "scan": {
+              "autofix": false,
+              "awsCdk": false,
+              "checkov": true,
+              "checkovModuleDownload": false,
+              "cloudformation": true,
+              "dockerfile": true,
+              "helm": true,
+              "kubernetes": true,
+              "kustomize": true,
+              "opal": true,
+              "scanGitSubModules": false,
+              "terraform": true,
+              "terraformPlan": true,
+              "tfsec": true
+            }
+          },
+          "sca": {
+            "enabled": true,
+            "pullRequest": {
+              "auditMode": false,
+              "commentOnlyHighAndCritical": false,
+              "comments": true
+            },
+            "scan": {
+              "exceptions": [],
+              "licenseDetection": true,
+              "sast": true,
+              "secret": true
+            }
+          }
+        }
+      }
+    },
+    "uploadedAt": "2025-07-14T15:03:11.34Z"
+  },
+  "metrics": {
+    "complianceFindings": {
+      "CIS": 0,
+      "CIS_AND_HIPAA": 0,
+      "HIPAA": 0
+    },
+    "findings": 5,
+    "findingsCritical": 4,
+    "findingsFail": 3,
+    "findingsFailAutofixFalse": 3,
+    "findingsFailAutofixTrue": 0,
+    "findingsFailCritical": 3,
+    "findingsFailHigh": 0,
+    "findingsFailInfo": 0,
+    "findingsFailLow": 0,
+    "findingsFailMedium": 0,
+    "findingsHigh": 0,
+    "findingsInfo": 0,
+    "findingsLow": 0,
+    "findingsMedium": 1,
+    "findingsPass": 2,
+    "findingsPassAutofixFalse": 2,
+    "findingsPassAutofixTrue": 0,
+    "findingsPassCritical": 1,
+    "findingsPassHigh": 0,
+    "findingsPassInfo": 0,
+    "findingsPassLow": 0,
+    "findingsPassMedium": 1,
+    "suppressedFindings": 0,
+    "suppressedFindingsCritical": 0,
+    "suppressedFindingsFail": 0,
+    "suppressedFindingsFailAutofixFalse": 0,
+    "suppressedFindingsFailAutofixTrue": 0,
+    "suppressedFindingsFailCritical": 0,
+    "suppressedFindingsFailHigh": 0,
+    "suppressedFindingsFailInfo": 0,
+    "suppressedFindingsFailLow": 0,
+    "suppressedFindingsFailMedium": 0,
+    "suppressedFindingsHigh": 0,
+    "suppressedFindingsInfo": 0,
+    "suppressedFindingsLow": 0,
+    "suppressedFindingsMedium": 0,
+    "suppressedFindingsPass": 0,
+    "suppressedFindingsPassAutofixFalse": 0,
+    "suppressedFindingsPassAutofixTrue": 0,
+    "suppressedFindingsPassCritical": 0,
+    "suppressedFindingsPassHigh": 0,
+    "suppressedFindingsPassInfo": 0,
+    "suppressedFindingsPassLow": 0,
+    "suppressedFindingsPassMedium": 0
+  },
+  "startedAt": "2025-07-14T15:02:58.206Z"
+}
